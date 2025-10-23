@@ -28,6 +28,15 @@ public class LoginActivity extends AppCompatActivity {
 
         }
     };
+    View.OnClickListener SignupListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Button SignupB = findViewById(R.id.signup_button);
+            Intent intent = new Intent(LoginActivity.this,SignUpActivity.class);
+            startActivity(intent);
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
