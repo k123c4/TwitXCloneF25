@@ -31,10 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     View.OnClickListener SignupListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Button SignupB = findViewById(R.id.signup_button);
-            Intent intent = new Intent(LoginActivity.this,SignUpActivity.class);
+            Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
             startActivity(intent);
-
         }
     };
 
@@ -44,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
         signupButton = findViewById(R.id.signup_button);
+        signupButton.setOnClickListener(SignupListener);
+
         loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(loginListener);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
