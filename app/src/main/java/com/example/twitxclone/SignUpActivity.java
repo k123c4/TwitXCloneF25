@@ -1,5 +1,6 @@
 package com.example.twitxclone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -41,6 +42,9 @@ public class SignUpActivity extends AppCompatActivity {
                 user.setDob(dobText.getText().toString());
                 user.setName(usernameText.getText().toString());
                 userReference.child(uid).setValue(user);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class); //getApplicationContext() bc in listener
+
+                startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "ERROR user not created", Toast.LENGTH_LONG).show();
             }
@@ -73,6 +77,8 @@ public class SignUpActivity extends AppCompatActivity {
         String dob = dobText.getText().toString();
 
         auth.createUserWithEmailAndPassword(usern, password).addOnCompleteListener(this,listener);
+
+
     }
 
 }

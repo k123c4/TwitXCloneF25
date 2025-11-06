@@ -1,8 +1,8 @@
 package com.example.twitxclone.model;
 
 public class user {
-    static final String N_KEY = "EMAILV";
-    static final String DOB_Key = "DOBV";
+    static public final String N_KEY = "EMAILV";
+    static public final String DOB_Key = "DOBV";
     private String name;
     private String dob;
 
