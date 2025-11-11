@@ -49,10 +49,11 @@ public class LoginActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
 
                                 FirebaseUser userN = auth.getCurrentUser();
-                                DatabaseReference refUsers = database.getReference("user");
+                                DatabaseReference refUsers = database.getReference("users");
                                 refUsers.orderByChild("email").equalTo(username).limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                                         user U = snapshot.getChildren().iterator().next().getValue(user.class);
                                         String dob = U.getDob();
                                         getIntent().putExtra(user.N_KEY, username);
